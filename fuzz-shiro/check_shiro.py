@@ -18,6 +18,7 @@ check="rememberMe"
 with open("shiro.txt","w") as f:
     for line in lines:
         try:
+        	line=line.replace('\n','').replace('\r','')
             k = requests.get(line,headers=header,verify=False,timeout=10)
             l = str(k.headers)
             if check in l:
